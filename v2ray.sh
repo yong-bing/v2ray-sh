@@ -1,13 +1,17 @@
 #!/bin/bash
 
 if [ -z "$1" ]; then
-    echo "Usage: $0 <domain>"
+    echo "Usage: $0 <domain> <id>"
     exit 1
 fi
 
 DOMAIN="$1"
 echo "Using domain: $DOMAIN"
 sed -i "s/server_name _;/server_name $DOMAIN;/g" ./conf/nginx_conf/default
+
+id="$2"
+echo "Using id: $id"
+sed -i "s/\"id\": \"\"/\"id\": \"$id\"/g" ./conf/v2ray_conf/config.json
 
 # 校准系统时间
 echo "Synchronizing system time..."
