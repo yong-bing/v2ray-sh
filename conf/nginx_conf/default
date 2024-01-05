@@ -1,6 +1,7 @@
 server {
     listen 80;
     listen [::]:80;
+    include /etc/nginx/conf.d/firewall.conf;
     server_name _;
     # 实现301跳转
     return 301 https://$server_name$request_uri;

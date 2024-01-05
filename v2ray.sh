@@ -43,6 +43,7 @@ rm -rf /usr/local/etc/v2ray/config.json
 rm -rf /etc/nginx/sites-available/default
 cp ./conf/v2ray_conf/config.json /usr/local/etc/v2ray/config.json
 cp ./conf/nginx_conf/default /etc/nginx/sites-available/default
+cp ./conf/nginx_conf/firewall.conf /etc/nginx/conf.d/firewall.conf
 cp -R ./conf/web /var/www/html/
 
 # 重启服务
