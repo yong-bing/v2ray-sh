@@ -52,4 +52,11 @@ systemctl start nginx v2ray
 systemctl enable v2ray
 /lib/systemd/systemd-sysv-install enable nginx
 
+apt install ufw
+ufw enable
+ufw default deny
+ufw allow 22/tcp
+ufw allow 80/tcp
+ufw allow 443/tcp
+
 echo "Done!"
